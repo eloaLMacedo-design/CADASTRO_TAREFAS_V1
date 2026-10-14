@@ -16,17 +16,20 @@
 <body>
 
     <div class="painel">
+
+        <!-- CARD DE TAREFAS ATRASADAS -->
         <div class="card-extra atrasadas" id="card-atrasadas">
+
             <div class="titulo-extra">
                 <img src="negativo.png" alt="Gatinho triste">
                 <h2>Atrasadas</h2>
             </div>
-            <ul id="lista-atrasadas" class="lista-tarefas">
-            </ul>
+
+            <ul id="lista-atrasadas" class="lista-tarefas"></ul>
 
         </div>
 
-
+        <!-- PAINEL PRINCIPAL -->
         <div class="cartao-aplicacao">
 
             <header class="cabecalho-aplicacao">
@@ -36,31 +39,62 @@
                     <h1>Minhas Tarefas ✨</h1>
                 </div>
 
-                <button id="botao-alternar-tema" class="botao-icone">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
+                <div class="botoes-cabecalho">
+
+                    <!-- BOTÃO DE NOVIDADES -->
+                    <button
+                        id="botao-novidades"
+                        class="botao-icone"
+                        title="Ver novidades"
+                        aria-label="Ver novidades"
+                        aria-haspopup="dialog"
+                        aria-controls="modal-novidades">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                    </button>
+
+                    <!-- BOTÃO DE TEMA -->
+                    <button
+                        id="botao-alternar-tema"
+                        class="botao-icone"
+                        title="Alternar tema"
+                        aria-label="Alternar tema">
+
+                        <i class="fa-solid fa-moon"></i>
+
+                    </button>
+
+                </div>
 
             </header>
 
-
+            <!-- FORMULÁRIO -->
             <div class="caixa-entrada">
 
-                <input type="text" id="campo-tarefa" placeholder="O que vamos fazer hoje?..." maxlength="40">
-                <input type="datetime-local" id="campo-prazo">
+                <input
+                    type="text"
+                    id="campo-tarefa"
+                    placeholder="O que vamos fazer hoje?..."
+                    maxlength="40">
+
+                <input
+                    type="datetime-local"
+                    id="campo-prazo">
 
                 <div class="opcoes-tarefa">
 
                     <select id="campo-categoria">
-                        <option value="Pessoal">🏠 Pessoal</option>
-                        <option value="Estudos">📚 Estudos</option>
-                        <option value="Trabalho">💼 Trabalho</option>
-                        <option value="Outros">📌 Outros</option>
+                        <option value="Pessoal">Pessoal</option>
+                        <option value="Estudos">Estudos</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Outros">Outros</option>
                     </select>
 
                     <select id="campo-prioridade">
-                        <option value="baixa">🟢 Baixa</option>
-                        <option value="media" selected>🟡 Média</option>
-                        <option value="alta">🔴 Alta</option>
+                        <option value="baixa">Prioridade baixa</option>
+                        <option value="media" selected>Prioridade média</option>
+                        <option value="alta">Prioridade alta</option>
                     </select>
 
                 </div>
@@ -72,44 +106,149 @@
 
             </div>
 
-
+            <!-- FILTROS -->
             <div class="filtros">
+
                 <button class="filtro ativo" data-filtro="todas">
                     Todas
                 </button>
+
                 <button class="filtro" data-filtro="pendentes">
                     Pendentes
                 </button>
+
                 <button class="filtro" data-filtro="concluidas">
                     Concluídas
                 </button>
+
             </div>
 
-
-            <ul id="lista-tarefas" class="lista-tarefas">
-                <!-- As tarefas serão inseridas aqui pelo JavaScript -->
-            </ul>
-
+            <!-- LISTA PRINCIPAL -->
+            <ul id="lista-tarefas" class="lista-tarefas"></ul>
 
             <footer class="rodape-aplicacao">
-                <span id="contador-tarefas">
-                    0 tarefas na lista
-                </span>
+                <span id="contador-tarefas">0 tarefas na lista</span>
             </footer>
 
         </div>
+
+        <!-- CARD DE TAREFAS CONCLUÍDAS -->
         <div class="card-extra concluidas" id="card-concluidas">
+
             <div class="titulo-extra">
                 <img src="positivo.png" alt="Gatinho feliz">
                 <h2>Concluídas</h2>
             </div>
-            <ul id="lista-concluidas" class="lista-tarefas">
-            </ul>
+
+            <ul id="lista-concluidas" class="lista-tarefas"></ul>
+
         </div>
+
+    </div>
+
+    <!-- MODAL DE NOVIDADES -->
+    <div
+        id="modal-novidades"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-novidades"
+        aria-hidden="true">
+
+        <div class="conteudo-modal">
+
+            <button
+                id="fechar-novidades"
+                class="fechar-modal"
+                title="Fechar"
+                aria-label="Fechar novidades">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <h2 id="titulo-novidades">
+                <i class="fa-solid fa-sparkles"></i>
+                Novidades do projeto
+            </h2>
+
+            <p class="subtitulo-modal">
+                Confira as funcionalidades extras do meu painel!
+            </p>
+
+            <ul class="lista-novidades">
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Adicionar tarefas pela caixa de texto.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Concluir e excluir tarefas.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Editar o texto das tarefas.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Salvar as tarefas no navegador com localStorage.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Definir data e hora para os prazos.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Identificar tarefas atrasadas automaticamente.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Separar tarefas atrasadas e concluídas em cards.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Organizar tarefas por categoria.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Definir prioridades baixa, média e alta.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Filtrar tarefas por situação.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Alternar entre tema claro e escuro.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Personalizar o painel com imagens, cores e animações.
+                </li>
+
+            </ul>
+
+            <p class="rodape-modal">
+                Meu Painel de Tarefas • SENAI
+            </p>
+
+        </div>
+
     </div>
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
